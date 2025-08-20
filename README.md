@@ -27,7 +27,7 @@ Technology stack to be used in this project are as follows:
 - Quality Assurance (QA) engineer: Ensures an application performs according to requirements, spots functional and non-functional defects.
 - DevOps engineer: Facilitates cooperation between development and operations teams.
 - Test Automation Engineer (TA): Designs a test automation ecosystem.
- 
+
 ## Database Design
 
 Key entities (Users, Properties, Bookings, Reviews, and Payments)
@@ -44,46 +44,27 @@ Anology on sample fields to be included in the database.
 
 ## Feature Breakdown
 
-- user management
-- Property management
-- booking system
-1. API Documentation
-OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
-Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
-GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
-2. User Authentication
-Endpoints: /users/, /users/{user_id}/
-Features: Register new users, authenticate, and manage user profiles.
-3. Property Management
-Endpoints: /properties/, /properties/{property_id}/
-Features: Create, update, retrieve, and delete property listings.
-4. Booking System
-Endpoints: /bookings/, /bookings/{booking_id}/
-Features: Make, update, and manage bookings, including check-in and check-out details.
-5. Payment Processing
-Endpoints: /payments/
-Features: Handle payment transactions related to bookings.
-6. Review System
-Endpoints: /reviews/, /reviews/{review_id}/
-Features: Post and manage reviews for properties.
-7. Database Optimizations
-Indexing: Implement indexes for fast retrieval of frequently accessed data.
-Caching: Use caching strategies to reduce database load and improve performance.
-
-- (Description of each feature)
+- User management: This ensures proper registration, authentication, and profile management.
+- Property management: Enables property listing operations like creation, update, and retrieval.
+- Booking system: Enables booking management, comprising of check-in and check-out details of properties.
+- Payment system: Handles payment transactions related to bookings.
+- Review system: Helps with the management of reviews for properties.
+- System Documentation: Provides a well-documented system design process for subsequent improvement and integration to other platforms.
 
 ## API Security Overview
 
-- authentication: 
+A key backend responsibility is ensuring seamless communication between different application components (such as user interfaces and databases) through a technology called APIs. However, a security leak in the API could result in serious consequences, exposing personal user data (leading to privacy issues) or allowing attackers to hijack business processes and even financial transactions.
 
-- authorization:
+To mitigate these risks, several security measures must be implemented, such as:
 
-- rate limiting:
+- Authentication: Implementing a robust authentication mechanisms (e.g JWT tokens, session-based cookies, OAuth), or enforcing strong password policies, and ensuring secure multi-factor authentication (MFA) for users, helps to ensure only legitimate users and services can access the API.
 
-Provide a brief explanation of why security is crucial for each key area of the project (e.g., protecting user data, securing payments, etc.).
+- Authorization: While role-based access control (RBAC) or attribute-based access control (ABAC), can be set in place in enfore least-privilege principles, where users/services can only access what they need. This helps reduces damage radius when account is compromised.
+
+- Rate limiting: Added with throttling, this ensures gaps in api requests, reducing tendencies of overloading the api server. It also ensures a fair usage policies for legitimate users.
 
 ## CI/CD Pipeline Overview
 
-- Briefly explain what CI/CD pipelines are and why they are important for the project.
+CI/CD (Continuous Integration and Continuous Deployment) is a critical practice in the software delivery lifecycle, bridging the gap between development and production. It automates key stages such as building, testing, vulnerability scanning, and deployment, ensuring that code changes are delivered quickly, reliably, and securely.
 
-Mention the tools that could be used for this (e.g., GitHub Actions, Docker, etc.).
+They reduce errors due to human, speed up delivery, enhance code quality, and provide early detection of bugs or vulnerabilities. This ensures that the project remains stable, secure, and scalable as new features are introduced. Tools commonly used in CI/CD include, GitHub Actions, GitLab CI/CD, Jenkins, and CircleCI for pipeline automation, combined with Docker and Kubernetes for containerization and orchestration.
