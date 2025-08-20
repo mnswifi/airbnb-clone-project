@@ -30,10 +30,17 @@ Technology stack to be used in this project are as follows:
  
 ## Database Design
 
-- Key entities (Users, Properties, Booking, Reviews, and Payments)
-For each entity, list 3-5 important fields and describe how these entities are related (e.g., a user can have multiple properties, a booking belongs to a property, etc.).
+Key entities (Users, Properties, Bookings, Reviews, and Payments)
 
-- Describe how these entities are related.
+| Entity   | Fields   | Relationship                                                                       |
+|----------|----------|------------------------------------------------------------------------------------|
+| User     | Name, Age, Occupation    | 1 to Many mapping to (Properties, Bookings, Reviews, Payments)     |
+| Properties    | Location, Type, Class   | 1 to 1 mapping to (Users, Bookings, Payments, reviews)         |
+| Bookings | Date, Duration, CustomerName | 1 to 1 mapping to (Users, Payments) |
+| Reviews | Date, Comments, Rating | 1 to 1 mapping to (Users, Properties) |
+| Payments | Date, Amount, Property | 1 to 1 mapping to (Users, Properties, Bookings) |
+
+Anology on sample fields to be included in the database.
 
 ## Feature Breakdown
 
